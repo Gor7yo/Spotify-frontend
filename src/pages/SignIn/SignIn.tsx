@@ -3,12 +3,12 @@ import style from "./SignIn.module.css";
 import { Link } from "react-router";
 import {
   FaApple,
-  FaEye,
-  FaEyeSlash,
+  FaCheck,
   FaFacebook,
   FaGoogle,
 } from "react-icons/fa";
 import { useForm, type SubmitHandler } from "react-hook-form";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 type Inputs = {
   email: string;
@@ -77,7 +77,9 @@ export const SignIn = (): JSX.Element => {
               placeholder="Email address or username"
             />
 
-            {errors.email && <span>Email field is required</span>}
+            {errors.email && (
+              <span className={style.form__error}>Email field is required</span>
+            )}
           </div>
 
           <div className={`${style.form__password} ${style.form__input}`}>
@@ -89,18 +91,22 @@ export const SignIn = (): JSX.Element => {
             />
 
             {typeForPassword === "password" ? (
-              <FaEyeSlash
-                className={style.passwordVisibility}
+              <FiEyeOff
+                className={`${style.passwordVisibility} ${style.slashEye}`}
                 onClick={() => handlePasswordVisibility()}
               />
             ) : (
-              <FaEye
+              <FiEye
                 className={style.passwordVisibility}
                 onClick={() => handlePasswordVisibility()}
               />
             )}
 
-            {errors.password && <span>Password field is required</span>}
+            {errors.password && (
+              <span className={style.form__error}>
+                Password field is required
+              </span>
+            )}
           </div>
 
           <Link to={"/"} className={style.form__forgotPassword}>
@@ -109,8 +115,20 @@ export const SignIn = (): JSX.Element => {
 
           <div className={style.form__logIn}>
             <div className={style.logIn__checkbox}>
-              <input type="checkbox" className={style.checkbox} />
-              <span className={style.checkbox__span}>Remember me</span>
+              <input
+                id="checkbox-remember-me"
+                type="checkbox"
+                className={style.checkbox}
+              />
+              <label htmlFor="checkbox-remember-me" className={style.checkbox__label}>
+                <FaCheck className={style.checkbox__check} />
+              </label>
+              <label
+                htmlFor="checkbox-remember-me"
+                className={style.checkbox__span}
+              >
+                Remember me
+              </label>
             </div>
 
             <button type="submit" className={style.logIn__btn}>
