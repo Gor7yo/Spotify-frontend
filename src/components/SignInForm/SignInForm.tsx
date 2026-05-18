@@ -23,7 +23,6 @@ export const SignInForm = (): JSX.Element => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<Inputs>();
 
@@ -72,7 +71,7 @@ export const SignInForm = (): JSX.Element => {
         )}
       </div>
 
-      {signInError && (
+			{signInError && (
         <div className={style.form__error}>
           {signInError.message || "Login failed. Please try again."}
         </div>
