@@ -10,7 +10,7 @@ export const SignIn = (): JSX.Element => {
       <header className={style.SignIn__header}>
         <img
           className={style.logo}
-          src="./public/images/signInLogo.png"
+          src="./images/signInLogo.png"
           alt=""
         />
       </header>
