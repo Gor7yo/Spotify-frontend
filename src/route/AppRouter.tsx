@@ -63,6 +63,7 @@ const AuthRoute = ({ children }: { children: JSX.Element }) => {
 
 export const AppRouter = () => {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  console.log("isAuthenticated: " + isAuthenticated);
 
   return (
     <Routes>

@@ -1,7 +1,7 @@
-import { useState, type JSX } from "react";
+import { type JSX } from "react";
 import style from "./SignIn.module.css";
 import { Link } from "react-router";
-import { FaApple, FaCheck, FaFacebook, FaGoogle } from "react-icons/fa";
+import { FaApple, FaFacebook, FaGoogle } from "react-icons/fa";
 import { SignInForm } from "../../components/SignInForm/SignInForm";
 
 export const SignIn = (): JSX.Element => {
