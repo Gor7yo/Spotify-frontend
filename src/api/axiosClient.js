@@ -2,7 +2,7 @@ import axios from "axios";
 import { useAuthStore } from "../store/authStore";
 
 export const apiClient = axios.create({
-  baseURL: process.env.API_URL || "http://localhost:3000",
+  baseURL: process.env.VITE_API_URL || "http://localhost:3000",
   timeout: 10000,
 });
 
