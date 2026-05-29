@@ -1,0 +1,52 @@
+.SearchTracks {
+	width: 100%;
+}
+
+.SearchTracks__form {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+}
+
+.form__input {
+	width: 100%;
+	padding: 12px 20px 15px 25px;
+	font-size: 1.3rem;
+	border-radius: 24px;
+	background-color: var(--primary-bg-color);
+	color: #fff;
+	outline: none;
+	letter-spacing: 1px;
+	border: none;
+	transition: .2s ease;
+}
+
+.form__input:focus {
+	scale: 101%;
+}
+
+.form__input:active {
+	scale: 99%;
+}
+
+.form__btn {
+	display: flex;
+	transition: .2s ease;
+	width: 64px;
+	height: 64px;
+	justify-content: center;
+	align-items: center;
+}
+
+.form__btn:active .btn__icon {
+	font-size: 26px;
+}
+
+.btn__icon {
+	font-size: 28px;
+	transition: .2s ease;
+	color: var(--primary-spotify-green);
+}
+

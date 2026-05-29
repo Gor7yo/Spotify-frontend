@@ -33,7 +33,7 @@ interface User {
 interface AuthStoreState {
   setAuth: (accessToken: string) => void;
   logout: () => void;
-  updateUser: (user: User) => void;
+  updateUser: (user: User | null) => void;
   accessToken: string | null;
   user: User | null;
   isAuthenticated: boolean;
@@ -68,6 +68,7 @@ export const useAuthSign = () => {
   const logout = async (): Promise<void> => {
     try {
       await authService.logout();
+      updateUser(null)
     } catch (error) {
       console.error("Logout error: ", error);
     } finally {
