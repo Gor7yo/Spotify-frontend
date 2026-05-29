@@ -13,19 +13,19 @@ export const Search = (): JSX.Element => {
 
   useEffect(() => {
     if (artists.length == 0) {
-      setIsAvalible((state) => state = true);
+      setIsAvalible(true);
     }
     if (artists.length > 0) {
-      setIsAvalible((state) => state = false);
+      setIsAvalible(false);
     }
   }, [artists]);
 
   useEffect(() => {
     if (artists.length == 0) {
-      setIsAvalible((state) => state = true);
+      setIsAvalible(true);
     }
     if (artists.length > 0) {
-      setIsAvalible((state) => state = false);
+      setIsAvalible(false);
     }
   }, []);
 
